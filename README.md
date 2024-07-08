@@ -1,15 +1,11 @@
-Welcome to your new dbt project!
+### About
 
-### Using the starter project
+dbt Project with Northwind data to explore and test new macro ideas. This project runs on BigQuery.
 
-Try running the following commands:
-- dbt run
-- dbt test
+Some of the macros are separated trhough branches to prevent interference with eachother.
 
+### List of macros
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Automatic source sample through manipulation of builtin method 'source'
+- Simplification of the defer functionality for dbt core users
+- Macro to clean tables and views for Redshift (This is here for safekeeping)
