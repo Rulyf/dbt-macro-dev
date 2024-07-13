@@ -8,7 +8,7 @@ models:
         description: Supplier primary key.
         # Redundant test, but good practice to have it on dimension models.
         # Test were already applied at the source level.
-        tests:
+        data_tests:
           - unique
           - not_null
 

@@ -8,33 +8,33 @@ sources:
       - name: categories
         columns:
           - name: categoryid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: customers
         columns:
           - name: customerid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: employees
         columns:
           - name: employeeid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: orders
         columns:
           - name: orderid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: orders_details
-        tests:
+        data_tests:
           - unique:
               column_name: "orderid || '-' || productid"
         columns:
@@ -46,20 +46,20 @@ sources:
       - name: products
         columns:
           - name: productid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: shippers
         columns:
           - name: shipperid
-            tests:
+            data_tests:
               - unique
               - not_null
 
       - name: suppliers
         columns:
           - name: supplierid
-            tests:
+            data_tests:
               - unique
               - not_null
