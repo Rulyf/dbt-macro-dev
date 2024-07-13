@@ -8,41 +8,41 @@ models:
         description: Fact sales table primary key.
         # Redundant test, but good practice to have it on dimension models.
         # Test were already applied at the source level.
-        tests:
+        data_tests:
           - unique
           - not_null
 
       - name: fk_customer
         description: Foreign key for the customer table.
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_customers')
               field: pk_customer
 
       - name: fk_product
         description: Foreign key for the product table.
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_products')
               field: pk_product
 
       - name: fk_employee
         description: Foreign key for the employee table.
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_employees')
               field: pk_employee
 
       - name: fk_shipper
         description: Foreign key for the shipper table.
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_shippers')
               field: pk_shipper
 
       - name: fk_supplier
         description: Foreign key for the supplier table.
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_suppliers')
               field: pk_supplier
