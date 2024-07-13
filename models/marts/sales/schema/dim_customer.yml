@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_customers
-    description: Table for product categories data.
+    description: Dimension table for Northwind customer information.
     columns:
       - name: pk_customer
         description: Customer primary key.

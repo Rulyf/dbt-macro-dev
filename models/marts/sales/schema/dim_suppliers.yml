@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_suppliers
+    description: Dimesion table of Northwind suppliers.
+    columns:
+      - name: pk_supplier
+        description: Supplier primary key.
+        # Redundant test, but good practice to have it on dimension models.
+        # Test were already applied at the source level.
+        tests:
+          - unique
+          - not_null
+
+      - name: supplier
+        description: Supplier's company name.
+
+      - name: supplier_city
+        description: Supplier's city.
+
+      - name: supplier_country
+        description: Supplier's country.

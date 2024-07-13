@@ -23,7 +23,7 @@ with
             , details.quantity
             , details.discount
             , orders.freight
-            , details.fk_order as invoice_number
+            , orders.pk_order as invoice_number
             , orders.customer
             , orders.customer_city
             , orders.customer_region
