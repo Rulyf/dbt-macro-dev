@@ -45,3 +45,8 @@ seeds:
     raw_northwind:
       +enabled: false
       +schema: northwind_erp
+
+vars:
+  dbt_northwind:
+    sample_target_list: ('developer', 'default')
+    sample_source_list: ('order_details')
