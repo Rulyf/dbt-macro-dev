@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Dimesion table of Northwind products and their categories.
+    columns:
+      - name: pk_product
+        description: Product primary key.
+        # Redundant test, but good practice to have it on dimension models.
+        # Test were already applied at the source level.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_supplier
+        description: Foreing key for the supplier dimension model.
+
+      - name: unit_price
+        description: Price by unit in dollars.
+
+      - name: avaiable_stock
+        description: Avaiable stock in units.
+
+      - name: units_on_order
+        description: Current number of units on order.
+
+      - name: reorder_level
+        description: Stock level where a new order is triggred.
+
+      - name: product
+        description: Product's name.
+
+      - name: unit_quantity
+        description: Quantity of product by unit. (Ie. Number of packages, size, weight)
+
+      - name: category
+        description: Product's category name.
+
+      - name: category_desc
+        description: Product's category description.
+
+      - name: is_discontinued
+        description: Flag that indicates if the product is still comercialized.

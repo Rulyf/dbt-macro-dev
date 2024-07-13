@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_shippers
+    description: Dimesion table of Northwind shippers partners.
+    columns:
+      - name: pk_shipper
+        description: Shipper primary key.
+        # Redundant test, but good practice to have it on dimension models.
+        # Test were already applied at the source level.
+        tests:
+          - unique
+          - not_null
+      
+      - name: shipper
+        description: Shipper's company name.

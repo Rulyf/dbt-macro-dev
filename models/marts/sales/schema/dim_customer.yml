@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Dimension table for Northwind customer information.
+    columns:
+      - name: pk_customer
+        description: Customer primary key.
+        # Redundant test, but good practice to have it on dimension models.
+        # Test were already applied at the source level.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer
+        description: Customer company's name.
+
+      - name: customer_contact
+        description: Customer's contact name.
+
+      - name: customer_city
+        description: Customer's city.
+
+      - name: customer_region
+        description: Customer's region.
+
+      - name: customer_country
+        description: Customer's country.

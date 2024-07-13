@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: Fact table of Northwind sales.
+    columns:
+      - name: sk_sales
+        description: Fact sales table primary key.
+        # Redundant test, but good practice to have it on dimension models.
+        # Test were already applied at the source level.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_customer
+        description: Foreign key for the customer table.
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: pk_customer
+
+      - name: fk_product
+        description: Foreign key for the product table.
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: pk_product
+
+      - name: fk_employee
+        description: Foreign key for the employee table.
+        tests:
+          - relationships:
+              to: ref('dim_employees')
+              field: pk_employee
+
+      - name: fk_shipper
+        description: Foreign key for the shipper table.
+        tests:
+          - relationships:
+              to: ref('dim_shippers')
+              field: pk_shipper
+
+      - name: fk_supplier
+        description: Foreign key for the supplier table.
+        tests:
+          - relationships:
+              to: ref('dim_suppliers')
+              field: pk_supplier
+
+      - name: order_dt
+        description: Order date.
+
+      - name: required_dt
+        description: Required date to complete the delivery.
+
+      - name: shipped_dt
+        description: Data when the order was shipped.
+
+      - name: unit_price
+        description: Price by unit in dollars.
+
+      - name: quantity
+        description: Quantity sold.
+
+      - name: discount
+        description: Discount given in decimal.
+
+      - name: gross_amount
+        description: Gross amount in dollars. (Unit price * quantity)
+
+      - name: discount_amount
+        description: Discount amount in dollars.
+
+      - name: prorated_freight_amount
+        description: Prorated freight cost by each item in an invoice.
+
+      - name: net_amount
+        description: Amount in dollars after discount and freight.
+
+      - name: invoice_number
+        description: Invoice number.
+
+      - name: customer
+        description: Customer's name in the invoice.
+
+      - name: customer_city
+        description: Customer's city in the invoice.
+
+      - name: customer_region
+        description: Customer's region in the invoice.
+
+      - name: customer_country
+        description: Customer's country in the invoice.
+
+      - name: is_delayed
+        description: >
+          Flag that indicates if a order will be delivered late. If the shipped
+          date is one day before required date or less this flat will return true.

@@ -1,0 +1,65 @@
+version: 2
+
+sources:
+  - name: erp
+    description: Source data from the northwind erp system. It contains business transaction data.
+    schema: northwind_erp
+    tables:
+      - name: categories
+        columns:
+          - name: categoryid
+            tests:
+              - unique
+              - not_null
+
+      - name: customers
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+
+      - name: employees
+        columns:
+          - name: employeeid
+            tests:
+              - unique
+              - not_null
+
+      - name: orders
+        columns:
+          - name: orderid
+            tests:
+              - unique
+              - not_null
+
+      - name: orders_details
+        tests:
+          - unique:
+              column_name: "orderid || '-' || productid"
+        columns:
+          - name: orderid
+              - not_null
+          - name: productid
+              - not_null
+
+      - name: products
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
+
+      - name: shippers
+        columns:
+          - name: shipperid
+            tests:
+              - unique
+              - not_null
+
+      - name: suppliers
+        columns:
+          - name: supplierid
+            tests:
+              - unique
+              - not_null

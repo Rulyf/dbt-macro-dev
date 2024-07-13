@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_erp__categories
+    description: Table for product categories data.
+    columns:
+      - name: pk_category
+        description: Category primary key.
+
+      - name: category
+        description: Category name.
+
+      - name: category_desc
+        description: Category description.

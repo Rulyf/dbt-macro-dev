@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: Dimesion table of Northwind employees and their managers.
+    columns:
+      - name: pk_employee
+        description: Employee primary key.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_birth_dt
+        description: Employee's birth date.
+
+      - name: employee_hire_dt
+        description: Employee's hire date.
+
+      - name: employee
+        description: Employee's name.
+
+      - name: employee_role
+        description: Employee's job role.
+
+      - name: manager
+        description: Employee's manager name.
+
+      - name: employee_city
+        description: Employee's city.
+
+      - name: employee_country
+        description: Employee's country.
+
+      - name: employee_desc
+        description: Employee's previous experience and history.
