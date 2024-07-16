@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: defer_staging
+    description: >
+      A source configuration to defer models from the staging schema to the ones in production.
+    schema: staging
+    tables:
+      - name: stg_erp__orders_details
+  
+  - name: defer_marts
+    description: >
+      A source configuration to defer models from the marts schema to the ones in production.
+    schema: marts
+    tables:
+      - name: dim_customers

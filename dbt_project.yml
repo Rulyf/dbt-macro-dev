@@ -45,3 +45,8 @@ seeds:
     raw_northwind:
       +enabled: false
       +schema: northwind_erp
+  
+vars:
+  dbt_northwind_demo:
+    defer_target_names: ('dev')
+    defer_source_names: ('defer_staging', 'defer_marts')

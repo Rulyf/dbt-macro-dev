@@ -24,7 +24,7 @@
             {%- if model_name in defer_models_list() -%} 
 
                 {# Finnaly, we use the source_name and model_name defined in the sources.yml file. #}
-                {{ return(builtins.source(defer_source_name(), model_name)) }}
+                {{ return(builtins.source(defer_source_name(model_name), model_name)) }}
 
             {%- else -%}
         

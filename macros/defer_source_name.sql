@@ -1,4 +1,4 @@
-{% macro defer_source_name() -%}
+{% macro defer_source_name(model_name) -%}
 
     {# Run macro only in execution mode #}
     {% if execute %}
