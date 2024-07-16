@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_erp__orders_details
+    description: Table for product categories data.
+    config:
+      meta:
+        defer: true
+        defer_loc: dbt-feature-exploration.staging.stg_erp__orders_details
+    columns:
+      - name: sk_order_detail
+        description: Primary key for order details staging table.
+
+      - name: fk_order
+        description: Foreign key for the order table.
+
+      - name: fk_product
+        description: Foreign key for the product table.
+
+      - name: unit_price
+        description: Price by unit in dollars.
+
+      - name: quantity
+        description: Quantity sold.
+
+      - name: discount
+        description: Discount given in decimal.
+

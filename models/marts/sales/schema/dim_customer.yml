@@ -3,6 +3,10 @@ version: 2
 models:
   - name: dim_customers
     description: Dimension table for Northwind customer information.
+    config:
+      meta:
+        defer: true
+        defer_loc: dbt-feature-exploration.marts.dim_customers
     columns:
       - name: pk_customer
         description: Customer primary key.

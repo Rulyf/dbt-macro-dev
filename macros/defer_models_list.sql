@@ -18,18 +18,19 @@
     
         {# Empty list to get all models set to be deffered. #}
         {% set models_list = [] -%}
-        {# Iterate over all sources contained in graph.sources #}
-        {% for sources in graph.sources.values() -%}
+
+        {# TBD #}
+        {% for model in graph.nodes.values() | selectattr("resource_type", "equalto", "model") -%}
+
             {# 
-                Don't forget to create a sources.yml file with  the models you chose to defer and
-                a defer_names variable  in your project_yml with the source names defined in the
-                sources.yml file you just created. If you don't add the variable nothing is going
-                to happend. It will default to an empty list ().
+                TBD
             #}
-            {%- if sources.source_name in var('defer_source_names', ()) -%}
+            {%- if model.meta.defer == true -%}
+                
                 {# Append models name to the list. #}
-                {%- do models_list.append(sources.name) -%}
+                {%- do models_list.append(model.name) -%}
                 {# {{ log(sources.name, info=True) }} #}
+            
             {%- endif -%}
         {%- endfor %}
 
