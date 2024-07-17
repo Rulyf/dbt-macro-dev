@@ -15,6 +15,14 @@
         models and intermediate models that have many children.
     #}
 
+    {{ check_correct_target_name() }}
+    {# 
+        It's possible to prevent user from running dbt run or dbt build
+        without  selectors by applying a check in sources  during parse.
+        This is a workaround, because on-hook-start doesn't work.
+    #}
+    {{ check_select_arg() }}
+
     {# Choose the targets that you want to have the defer option by creating a variable named defer_target_names #}
     {%- if target.name in var('defer_target_names', ()) -%}
 
@@ -23,6 +31,7 @@
             {# Check if the model_name is one to be deffered. #}
             {%- if model_name in defer_models_list() -%} 
 
+                {{ check_enforce_defer(model_name) }}
                 {# Finnaly, we use the source_name and model_name defined in the sources.yml file. #}
                 {{ return(full_object_name(model_name)) }}
 

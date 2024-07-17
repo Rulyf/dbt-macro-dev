@@ -27,9 +27,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
-on-run-start:
-  - "{{ check_select_arg() }}"
-  - "{{ enforce_defer() }}"
 
 models:
   dbt_northwind_demo:
